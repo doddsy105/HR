@@ -18265,6 +18265,9 @@ module.exports = camelize;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__api__);
+
 
 
 class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
@@ -18272,12 +18275,19 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			null,
-			'test'
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__api__["default"], null),
+			'test2'
 		);
 	}
 }
 
 /* harmony default export */ __webpack_exports__["a"] = (App);
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed: SyntaxError: C:/Users/dodds/Desktop/websites/AO/app/components/api.jsx: Unexpected token (11:19)\n\n   9 |   }\n  10 |   \n> 11 |   getInitialState: function() {\n     |                    ^\n  12 |     return {\n  13 |       data: []\n  14 |     }\n");
 
 /***/ })
 /******/ ]);
