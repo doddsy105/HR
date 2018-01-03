@@ -18266,7 +18266,6 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(28);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__api__);
 
 
 
@@ -18275,8 +18274,7 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			null,
-			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__api__["default"], null),
-			'test2'
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */], null)
 		);
 	}
 }
@@ -18285,9 +18283,63 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 /***/ }),
 /* 28 */
-/***/ (function(module, exports) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-throw new Error("Module build failed: SyntaxError: C:/Users/dodds/Desktop/websites/AO/app/components/api.jsx: Unexpected token (11:19)\n\n   9 |   }\n  10 |   \n> 11 |   getInitialState: function() {\n     |                    ^\n  12 |     return {\n  13 |       data: []\n  14 |     }\n");
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+
+
+class Results extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      data: []
+    };
+  }
+
+  componentDidMount() {
+    const url2 = 'https://codepen.io/jobs.json';
+    fetch(url2).then(res => res.json()).then(res => {
+      this.setState({ data: res.jobs });
+    }).catch(err => {
+      console.log('Error happened during fetching!', err);
+    });
+  }
+
+  render() {
+    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+      'div',
+      { className: 'codepen-job-list' },
+      this.state.data.map(({ title, company_name, term, url }) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'div',
+        { className: 'codepen-job-list__row' },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'h3',
+          { className: 'codepen-job-list__title' },
+          title
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          null,
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'a',
+            { className: 'codepen-job-list__company', href: url },
+            company_name
+          )
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'p',
+          null,
+          term
+        )
+      ))
+    );
+  }
+}
+
+/* harmony default export */ __webpack_exports__["a"] = (Results);
 
 /***/ })
 /******/ ]);

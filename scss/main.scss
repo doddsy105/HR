@@ -1,0 +1,34 @@
+// Main CSS//
+
+/// Site Vars
+
+$ao-main-white: #fff;
+$ao-main-background: #34495e;
+$ao-main-blue: #3498db;
+
+$background-colour: $ao-main-background;
+$job-list-title-color: $ao-main-white;
+$job-list-title-border: $ao-main-white;
+$job-list-company-color: $ao-main-blue;
+
+.codepen-job-list {
+	background: $background-colour;
+}
+
+.codepen-job-list__row {
+	padding: 15px;
+	border: 1px solid $job-list-title-border;
+}
+
+.codepen-job-list__title {
+	color: $job-list-title-color;
+	font-size: 18px;
+	margin-bottom: 15px;
+}
+
+.codepen-job-list__company {
+	margin-bottom: 15px;
+	display: block;
+	text-decoration: none;
+	color: $job-list-company-color;
+}
