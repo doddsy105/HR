@@ -1,0 +1,206 @@
+import React from 'react';
+
+class Markets extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isEmpty: 'true',
+      addNewMarket: false,
+      marketPrice: '-',
+      markets: [{
+        icon: 'whistle',
+        title: 'Match Result',
+        template: 'to win'
+      },
+      {
+        icon: 'goals',
+        title: 'Goals Market'
+      },
+      {
+        icon: 'shirt',
+        title: 'Both Teams To Score'
+      },
+      {
+        icon: 'flag',
+        title: 'Corners'
+      },
+      {
+        icon: 'card',
+        title: 'Cards'
+      }
+      ]
+    };
+  }
+  addMarket = () => {
+    this.setState({
+      isEmpty: 'false',
+      addNewMarket: true
+    });
+  }
+
+  render() {
+    return (
+      <div className="bb-market-list">
+        {this.state.markets.map(({ icon, title }) => (<span className="bb-market-list__type"><i className="bb-market-list__type-button" /><i className={`bb-market-list__${icon}`} />{title}</span>))}
+      </div>
+    );
+  }
+}
+
+export default Markets;
+
+
+
+
+
+
+////// ------- new file ////////////////////////
+
+
+
+import React from 'react';
+import PropTypes from 'prop-types';
+import List from './integration/bb_components/list';
+
+window.BvFrontend = window.BvFrontend || {};
+
+BvFrontend.ShowPlayerList = (state) => {
+  BvFrontend.ModalHelper.showDefaultMessage({
+    className: 'bb-playerlist-modal',
+    children: <PlayerList showViewMore={false} showPlayerListTitle={false} {...state} />,
+    icon: true,
+    iconClosable: true
+  });
+};
+
+class PlayerList extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      playerList: 'Player List',
+      teamOne: 'Team One',
+      showTeam: props.showTeam,
+      teamOneActive: props.teamOneActive,
+      teamTwoActive: props.teamTwoActive,
+      modalActive: false
+    };
+  }
+
+  teamOne = () => {
+    this.setState({
+      showTeam: 1,
+      teamOneActive: true,
+      teamTwoActive: false
+    });
+  }
+
+  teamTwo = () => {
+    this.setState({
+      showTeam: 2,
+      teamOneActive: false,
+      teamTwoActive: true
+    });
+  }
+
+  viewMore = () => {
+    BvFrontend.ShowPlayerList(this.state);
+  }
+
+
+  render() {
+    const playerTeam = this.state.showTeam;
+    let pt = null;
+    if (playerTeam === 1) {
+      pt = <List />; // list 1
+    } else {
+      pt = <List />; // list 2
+    }
+
+    return (
+      <div className="bb-playerlist bb-market-component">
+        <span className="bb-title-component">
+          {this.props.showPlayerListTitle && this.state.playerList}
+        </span>
+        <a className={`bb-playerlist-team ${this.state.teamOneActive ? 'bb-playerlist-active' : ''}`} data-click={this.state.showTeam} onClick={this.teamOne}>Team 1</a>
+        <a className={`bb-playerlist-team ${this.state.teamTwoActive ? 'bb-playerlist-active' : ''}`} data-click={this.state.showTeam} onClick={this.teamTwo}>Team 2</a>
+        <div className="bb-playerlist__players">
+          {pt}
+          {this.props.showViewMore && <a className="bb-team-list__item bb-playerlist__viewmore" onClick={this.viewMore}>View More</a>}
+        </div>
+      </div>
+    );
+  }
+}
+
+PlayerList.propTypes = {
+  showViewMore: PropTypes.bool,
+  showPlayerListTitle: PropTypes.bool,
+  showTeam: PropTypes.number,
+  teamOneActive: PropTypes.bool,
+  teamTwoActive: PropTypes.bool,
+};
+
+PlayerList.defaultProps = {
+  showViewMore: true,
+  showTeam: 1,
+  teamOneActive: true,
+  teamTwoActive: false,
+  showPlayerListTitle: true,
+};
+
+export default PlayerList;
+
+
+
+//////// ----------- New file //////////
+
+import React from 'react';
+
+class Markets extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isEmpty: 'true',
+      addNewMarket: false,
+      marketPrice: '-',
+      markets: [{
+        icon: 'whistle',
+        title: 'Match Result',
+        template: 'to win'
+      },
+      {
+        icon: 'goals',
+        title: 'Goals Market'
+      },
+      {
+        icon: 'shirt',
+        title: 'Both Teams To Score'
+      },
+      {
+        icon: 'flag',
+        title: 'Corners'
+      },
+      {
+        icon: 'card',
+        title: 'Cards'
+      }
+      ]
+    };
+  }
+  addMarket = () => {
+    this.setState({
+      isEmpty: 'false',
+      addNewMarket: true
+    });
+  }
+
+  render() {
+    return (
+      <div className="bb-market-list">
+        {this.state.markets.map(({ icon, title }) => (<span className="bb-market-list__type"><i className="bb-market-list__type-button" /><i className={`bb-market-list__${icon}`} />{title}</span>))}
+      </div>
+    );
+  }
+}
+
+export default Markets;
