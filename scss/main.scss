@@ -2,14 +2,14 @@
 
 /// Site Vars
 
-$ao-main-white: #fff;
-$ao-main-background: #34495e;
-$ao-main-blue: #3498db;
+$main-white: #fff;
+$main-background: #34495e;
+$main-blue: #3498db;
 
-$background-colour: $ao-main-background;
-$job-list-title-color: $ao-main-white;
-$job-list-title-border: $ao-main-white;
-$job-list-company-color: $ao-main-blue;
+$background-colour: $main-background;
+$job-list-title-color: $main-white;
+$job-list-title-border: $main-white;
+$job-list-company-color: $main-blue;
 
 .codepen-job-list {
 	background: $background-colour;
