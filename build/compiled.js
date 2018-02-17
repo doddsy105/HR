@@ -18266,15 +18266,17 @@ module.exports = camelize;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api__ = __webpack_require__(28);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__api___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__api__);
 
 
 
 class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			null,
-			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */], null)
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__api__["default"], null)
 		);
 	}
 }
@@ -18283,63 +18285,9 @@ class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
 
 /***/ }),
 /* 28 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-
-
-class Results extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true,
-      data: []
-    };
-  }
-
-  componentDidMount() {
-    const url2 = 'https://codepen.io/jobs.json';
-    fetch(url2).then(res => res.json()).then(res => {
-      this.setState({ data: res.jobs });
-    }).catch(err => {
-      console.log('Error happened during fetching!', err);
-    });
-  }
-
-  render() {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-      'div',
-      { className: 'codepen-job-list' },
-      this.state.data.map(({ title, company_name, term, url }) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { className: 'codepen-job-list__row' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h3',
-          { className: 'codepen-job-list__title' },
-          title
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'p',
-          null,
-          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'a',
-            { className: 'codepen-job-list__company', href: url },
-            company_name
-          )
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'p',
-          null,
-          term
-        )
-      ))
-    );
-  }
-}
-
-/* harmony default export */ __webpack_exports__["a"] = (Results);
+throw new Error("Module build failed: SyntaxError: C:/Users/dodds/Desktop/websites/HR/app/components/api.jsx: Unexpected token, expected , (29:49)\n\n  27 |     return (\n  28 |       <div className=\"file-list-container\">\n> 29 |         {this.state.data.map(( type, name, added }) => (<div key={name} className=\"file-list-container__wrapper\"><h2 className=\"file-list-container__type\">{type}</h2><span className=\"file-list-container__info\">{name}{added}</span></div>))}\n     |                                                  ^\n  30 |       </div>\n  31 |     );\n  32 |   }\n");
 
 /***/ })
 /******/ ]);

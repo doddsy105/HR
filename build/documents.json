@@ -1,0 +1,41 @@
+[{
+"type": "folder",
+"name" : "misc",
+"files" : [{
+	"type": "doc",
+	"name": "Christmas party",
+	"added": "2017-12-01"
+ },
+ {
+	"type": "doc",
+	"name": "Christmas party",
+	"added": "2017-12-01"
+ }]
+}, 
+{
+"type": "pdf",
+"name": "Employee Handbook",
+"added": "2017-01-06"
+},{
+"type": "pdf",
+"name": "Public Holiday policy",
+"added": "2016-12-06"
+},
+{
+"type": "text",
+"name": "HR documents",
+"added": "2016-01-02"
+},{
+"type": "pdf",
+"name": "Sickness Forms",
+"added": "2016-11-01"
+},
+{
+"type": "word",
+"name": "Disciplinary",
+"added": "2014-04-06"
+},{
+"type": "pdf",
+"name": "Public Holiday policy 2018",
+"added": "2018-01-01"
+}]

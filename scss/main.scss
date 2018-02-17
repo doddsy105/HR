@@ -7,28 +7,29 @@ $main-background: #34495e;
 $main-blue: #3498db;
 
 $background-colour: $main-background;
-$job-list-title-color: $main-white;
-$job-list-title-border: $main-white;
-$job-list-company-color: $main-blue;
+$list-title-color: $main-white;
+$list-title-border: $main-white;
+$list-info-color: $main-blue;
 
-.codepen-job-list {
+.file-list-container {
+	text-transform: capitalize;
 	background: $background-colour;
 }
 
-.codepen-job-list__row {
+.file-list-container__wrapper {
 	padding: 15px;
-	border: 1px solid $job-list-title-border;
+	border: 1px solid list-title-border;
 }
 
-.codepen-job-list__title {
-	color: $job-list-title-color;
+.file-list-container__type {
+	color: $list-title-color;
 	font-size: 18px;
 	margin-bottom: 15px;
 }
 
-.codepen-job-list__company {
+.file-list-container__info {
 	margin-bottom: 15px;
 	display: block;
 	text-decoration: none;
-	color: $job-list-company-color;
+	color: $list-info-color;
 }

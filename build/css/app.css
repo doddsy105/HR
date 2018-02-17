@@ -41,19 +41,20 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-.codepen-job-list {
+.file-list-container {
+  text-transform: capitalize;
   background: #34495e; }
 
-.codepen-job-list__row {
+.file-list-container__wrapper {
   padding: 15px;
-  border: 1px solid #fff; }
+  border: 1px solid list-title-border; }
 
-.codepen-job-list__title {
+.file-list-container__type {
   color: #fff;
   font-size: 18px;
   margin-bottom: 15px; }
 
-.codepen-job-list__company {
+.file-list-container__info {
   margin-bottom: 15px;
   display: block;
   text-decoration: none;

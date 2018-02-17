@@ -10,11 +10,14 @@ class Results extends Component {
   }
 
   componentDidMount() {
-  const url2 = 'https://codepen.io/jobs.json';
+
+  const url2 = 'build/documents.json';
   fetch(url2)
     .then(res => res.json())
     .then(res => {
-      this.setState({ data: res.jobs });
+      this.setState({ data: res });
+      console.log(res[0].files);
+      return res;
     })
     .catch(err => {
       console.log('Error happened during fetching!', err);
@@ -23,8 +26,8 @@ class Results extends Component {
 
   render() {
     return (
-      <div className="codepen-job-list">
-        {this.state.data.map(({ title, company_name, term, url }) => (<div className="codepen-job-list__row"><h3 className="codepen-job-list__title">{title}</h3><p><a className="codepen-job-list__company" href={url}>{company_name}</a></p><p>{term}</p></div>))}
+      <div className="file-list-container">
+        {this.state.data.map(({ type, name, added }) => (<div key={name} className="file-list-container__wrapper"><h2 className="file-list-container__type">{type}</h2><span className="file-list-container__info">{name}{added}</span></div>))}
       </div>
     );
   }
