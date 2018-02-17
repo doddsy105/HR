@@ -11,6 +11,25 @@ $list-title-color: $main-white;
 $list-title-border: $main-white;
 $list-info-color: $main-blue;
 
+#App {
+	font-family: 'Lato', sans-serif;
+	margin: 15px;
+}
+
+.main-site-title {
+	font-size: 20px;
+	margin-bottom: 15px;
+	font-weight: bold;
+}
+
+.searchInputLabel {
+	margin-right: 10px;
+}
+
+.searchInput {
+	margin-bottom: 15px;
+}
+
 .file-list-container {
 	text-transform: capitalize;
 	background: $background-colour;
@@ -18,7 +37,7 @@ $list-info-color: $main-blue;
 
 .file-list-container__wrapper {
 	padding: 15px;
-	border: 1px solid list-title-border;
+	border: 1px solid $list-title-border;
 }
 
 .file-list-container__type {

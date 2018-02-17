@@ -41,13 +41,28 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+#App {
+  font-family: 'Lato', sans-serif;
+  margin: 15px; }
+
+.main-site-title {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: bold; }
+
+.searchInputLabel {
+  margin-right: 10px; }
+
+.searchInput {
+  margin-bottom: 15px; }
+
 .file-list-container {
   text-transform: capitalize;
   background: #34495e; }
 
 .file-list-container__wrapper {
   padding: 15px;
-  border: 1px solid list-title-border; }
+  border: 1px solid #fff; }
 
 .file-list-container__type {
   color: #fff;
