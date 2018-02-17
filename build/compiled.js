@@ -18270,11 +18270,22 @@ module.exports = camelize;
 
 
 class App extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
+	constructor(props) {
+		super(props);
+		this.state = {
+			title: "Bright HR data"
+		};
+	}
 
 	render() {
 		return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
 			'div',
 			null,
+			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+				'h1',
+				{ className: 'main-site-title' },
+				this.state.title
+			),
 			__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__api__["a" /* default */], null)
 		);
 	}
@@ -18298,6 +18309,7 @@ class Results extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
       isLoading: true,
       data: []
     };
+    this.filterList = this.filterList.bind(this);
   }
 
   componentDidMount() {
@@ -18312,25 +18324,57 @@ class Results extends __WEBPACK_IMPORTED_MODULE_0_react__["Component"] {
     });
   }
 
+  filterList() {
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('searchInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("file-list-container");
+    li = ul.getElementsByTagName('li');
+
+    for (i = 0; i < li.length; i++) {
+      a = li[i].getElementsByTagName("span")[0];
+      if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        li[i].style.display = "";
+      } else {
+        li[i].style.display = "none";
+      }
+    }
+  }
+
   render() {
     return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
       'div',
-      { className: 'file-list-container' },
-      this.state.data.map(({ type, name, added }) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        { key: name, className: 'file-list-container__wrapper' },
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'h2',
-          { className: 'file-list-container__type' },
-          type
-        ),
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-          'span',
-          { className: 'file-list-container__info' },
-          name,
-          added
-        )
-      ))
+      null,
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'label',
+        { className: 'searchInputLabel' },
+        ' Search by File Name'
+      ),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'searchInput', id: 'searchInput', onChange: this.filterList }),
+      __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        'ul',
+        { id: 'file-list-container', className: 'file-list-container' },
+        this.state.data.map(({ type, name, added }) => __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          'li',
+          { key: name, className: 'file-list-container__wrapper' },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'h2',
+            { className: 'file-list-container__type' },
+            type
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'span',
+            { className: 'file-list-container__info' },
+            name
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            'time',
+            null,
+            added
+          )
+        ))
+      )
     );
   }
 }

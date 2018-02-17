@@ -27,12 +27,11 @@ class Results extends Component {
 
   filterList() {
     var input, filter, ul, li, a, i;
-    input = document.getElementById('myInput');
+    input = document.getElementById('searchInput');
     filter = input.value.toUpperCase();
     ul = document.getElementById("file-list-container");
     li = ul.getElementsByTagName('li');
 
-    // Loop through all list items, and hide those who don't match the search query
     for (i = 0; i < li.length; i++) {
         a = li[i].getElementsByTagName("span")[0];
         if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
@@ -47,7 +46,7 @@ class Results extends Component {
     return (
       <div>
       <label className="searchInputLabel"> Search by File Name</label>
-        <input type="text" className="searchInput" id="myInput" onChange={this.filterList} />
+        <input type="text" className="searchInput" id="searchInput" onChange={this.filterList} />
         <ul id="file-list-container" className="file-list-container">
           {this.state.data.map(({ type, name, added }) => (<li key={name} className="file-list-container__wrapper"><h2 className="file-list-container__type">{type}</h2><span className="file-list-container__info">{name}</span><br /><time>{added}</time></li>))}
         </ul>
